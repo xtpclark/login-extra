@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DAG Login</title>
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+    <!-- -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf8"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  </head>
+  <body>
+
+  <!--  Why is this here and not in the head? -->
+  <style type="text/css" media="all">
+  <% include login/stylesheets/screen.css %>
+  </style>
+
+  <section id="info-box">
+    <div class="header-container">
+       <div class="column-left"><h2>First Steps</h2>
+       <p><iframe src="//player.vimeo.com/video/105351152?title=0&amp;byline=0&amp;portrait=0&amp;color=666666" width="200"  frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></p>
+       </div>
+
+       <div class="column-center"><h2>Essentials</h2> 
+       <p><iframe src="//player.vimeo.com/video/105351152?title=0&amp;byline=0&amp;portrait=0&amp;color=666666" width="200"  frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></p>
+      </div>   
+   
+       <div class="column-right"><h2>What Next?</h2>
+       <p><iframe src="//player.vimeo.com/video/105351152?title=0&amp;byline=0&amp;portrait=0&amp;color=666666" width="200"  frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></p>
+
+         </div>
+ <p><em>Please watch the videos above to get the most out of your xTuple FreeTrial!</em></p>
+    </div>
+  </section>
+
+
+<section id="info-box-side">
+  <div class="left-container">
+<h2>Welcome to your xTuple Trial!</h2>
+<p>We want to make every effor to see that you succeed! If you have any problems at all with this site - Logging In, Gremlins, or installing the xTuple Desktop Client, please give us a call at <a href="tel:1-000-000-0000">(000)-000-0000</a> or send an email to <a href="mailto:cloudhelp@xtuple.com?subject=Cloudhelp%20needed%20for%20FreeTrial">cloudhelp@xtuple.com</a>.</p>
+<br>
+<br>
+<p><h2>Learn:   <img src="http://xtupleuniversity.com/sites/default/files/xTupleUniversity-blue-beta-2_1.png"></h2></p>
+<p>We've recently launched 
+<a href=http://www.xtupleuniversity.com>xTuple University</a>
+, which is fast becoming the best online-resource to learn xTuple ERP.
+The videos are short, concise and are created by our subject matter experts.
+New content is always being added!</p>
+  <br>
+<br>
+<p><h2>Explore: Get the Desktop Client!</h2></p>
+<p>The Desktop Client offers the most feature rich environment to experience xTuple. 
+It is highly recommended that you first start exploring xTuple with the Desktop Client. 
+You should already have all of the information you need to get connected. If not, send us an email or give us a call! </p>
+<p>Download the xTuple Desktop Client here: <a href=''>Windows</a>, <a href=''>Mac</a>, <a href=''>Linux</a></h3></p>
+
+  </div>
+</section>
+
+<!-- 
+<br>
+<p> <h2>Visit our the Web Client Demo Guide</h2></p>
+<p><a href="http://www.xtuple.org/docs/mobile-web-demo-guide">Demo Guide</a></p>
+
+This Mobile Web Client provides access to the CRM, Project and Sales modules of xTuple. To access the full application, including CRM, Projects, Sales, Purchasing, Inventory, Manufacturing, Scheduling and Accounting modules - Please use the Desktop Client. -->
+
+
+
+  <section id="login">
+    <header id="header">
+      <img draggable="false" id="header_image" src="/assets/drake.jpg">
+    </header>
+
+
+
+    <section id="main">
+
+
+      <div style="transform: translateZ(0px); opacity: 1;" id="form-fields">
+        <form name="loginForm" action="/login" method="post">
+          <div class="login-label" id="form-fields_idLabel">Username</div>
+          <input class="login-input" id="form-fields_id" name="id" placeholder="Username">
+          <div class="login-label" id="form-fields_passwordLabel">Password</div>
+          <input class="login-input" id="form-fields_password" placeholder="Password" name="password" type="password">
+          <div class="login-label" id="form-fields_databaseLabel">Database</div>
+          <select class="login-input" id="form-fields_database" name="database">
+          <% for(var i = 0; i < databases.length; i++) { %>
+            <option value="<%= databases[i] %>"><%= databases[i] %></option>
+          <% } %>
+          </select>
+          <input class="enyo-unselectable login-button" name="submit"
+            id="form-fields_loginButton" type="submit" value="Sign In"/>
+        </form>
+      </div>
+      <a href="forgot-password" class="forgot-password">Forgot password?</a>
+
+    </section>
+    <% for(var i = 0; i < message.length; i++) { %>
+      <label class="login-message-box error"><%= message[i] %></label>
+    <% } %>
+
+
+
+  </section>
+
+
+    <div class="footer-container">
+      <p>
+   <img src="http://www.xtuple.org/sites/all/themes/xTuple.org_theme/logo.png">
+
+      </p>
+
+    </div>
+
+  <script>
+    document.loginForm.id.focus();
+  </script>
+  </body>
+</html>
+
